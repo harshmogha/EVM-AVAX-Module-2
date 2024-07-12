@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting DApp</title>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            animation: bounceIn 1s ease-in-out;
+        }
+
+        div {
+            margin-bottom: 20px;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        input, button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        input {
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #0056b3;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Voting DApp</h1>
+
+    <div>
+        <h2>Create Proposal</h2>
+        <input type="text" id="proposalDescription" placeholder="Proposal Description">
+        <button onclick="createProposal()">Create Proposal</button>
+    </div>
+
+    <div>
+        <h2>Vote on Proposal</h2>
+        <input type="number" id="proposalIndexVote" placeholder="Total Votes">
+        <button onclick="vote()">Vote</button>
+    </div>
+
+    <div>
+        <h2>Get Proposal</h2>
+        <input type="number" id="proposalIndexGet" placeholder="Total Proposal">
+        <button onclick="getProposal()">Get Proposal</button>
+        <p id="proposalDetails"></p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
